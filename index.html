@@ -148,7 +148,7 @@
 <section id="team">
   <div class="container">
     <div class="title-block text-center">
-      <h2>Meet Our Team</h2>
+      <h2>Meet the Team</h2>
       <div class="title-underline"></div>
     </div>
     <div class="row justify-content-center">
@@ -193,25 +193,25 @@
 <style>
 #team {
   padding: 80px 0;
-  background: #FFFFFF;
+  background: #0b375f;
 }
 
-.title-block {
+#team .title-block {
   margin-bottom: 60px;
 }
 
-.title-block h2 {
+#team .title-block h2 {
   font-size: 48px;
   font-weight: 700;
-  color: #FFFFFF;
+  color: #FFFFFF !important;
   margin-bottom: 20px;
   font-family: 'Georgia', serif;
 }
 
-.title-underline {
+#team .title-underline {
   width: 80px;
   height: 4px;
-  background: #0095f7;
+  background: #fabe12;
   margin: 0 auto;
 }
 
@@ -227,14 +227,13 @@
   border-radius: 50%;
   overflow: hidden;
   border: 6px solid #fabe12;
-;
-  box-shadow: 0 8px 20px rgba(90, 26, 26, 0.15);
+  box-shadow: 0 8px 20px rgba(250, 190, 18, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .team-member:hover .team-img-circle {
   transform: scale(1.05);
-  box-shadow: 0 12px 30px rgba(90, 26, 26, 0.25);
+  box-shadow: 0 12px 30px rgba(250, 190, 18, 0.5);
 }
 
 .team-img-circle img {
@@ -258,13 +257,13 @@
 .team-info small {
   display: block;
   color: #0095f7;
-;
+  font-family: 'Georgia', serif;
   font-size: 16px;
   font-weight: 500;
 }
 
 @media (max-width: 768px) {
-  .title-block h2 {
+  #team .title-block h2 {
     font-size: 36px;
   }
   
@@ -424,7 +423,7 @@
 <style>
 #process {
   padding: 80px 0;
-  background: #f5f0eb;
+  background: #FFFFFF;
 }
 
 .title-block {
@@ -542,40 +541,112 @@
   
 
   <!--  F O O T E R  -->
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3">
-          <h5>Explore</h5>
-          <ul>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Concept Video</a></li>
-            <li><a href="#">Our Team</a></li>
-            <li><a href="#">Design Process</a></li>
-          </ul>
-        </div>
-        <div class="col-md-3">
-          <h5>Academic Context</h5>
-          <ul>
-            <li>University of California, Santa Barbara</li>
-            <li>CMPSC 185: Human-Computer Interaction</li>
-            <li>Winter 2026</li>
-          </ul>
-        </div>
-        <div class="col-md-3">
-          <h5>Screw It!</h5>
-          <p>[insert description]</p>
-        </div>
-      </div> 
-      <div class="divider"></div>
-      <div class="row">
-          <div class="col-md-6 col-xs-12">
-            <small>&copy; 2026 Screw It. All rights reserved.</small>
-          </div>
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#video">Concept Video</a></li>
+          <li><a href="#team">Our Team</a></li>
+          <li><a href="#process">Design Process</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h5>Academic Context</h5>
+        <ul>
+          <li>University of California, Santa Barbara</li>
+          <li>CMPSC 185: Human-Computer Interaction</li>
+          <li>Winter 2026</li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h5>Screw It!</h5>
+        <p>[insert description]</p>
+      </div>
+    </div> 
+    <div class="divider"></div>
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <small>&copy; 2026 Screw It. All rights reserved.</small>
       </div>
     </div>
-  </footer>
-  <!--  E N D  F O O T E R  -->
+  </div>
+</footer>
+<!--  E N D  F O O T E R  -->
+
+<style>
+footer {
+  background: #032742;
+  color: #FFFFFF;
+  padding: 60px 0 30px;
+}
+
+footer h5 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+  font-family: 'Georgia', serif;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer ul li {
+  margin-bottom: 12px;
+  color: #FFFFFF;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+footer ul li a {
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer ul li a:hover {
+  color: #fabe12;
+  text-decoration: none;
+}
+
+footer p {
+  color: #FFFFFF;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+footer .divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 40px 0 30px;
+}
+
+footer small {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding: 40px 0 20px;
+  }
+  
+  footer .col-md-4 {
+    margin-bottom: 30px;
+  }
+  
+  footer .divider {
+    margin: 30px 0 20px;
+  }
+}
+</style>
     
 
     <!-- External JavaScripts -->
