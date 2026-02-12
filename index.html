@@ -42,7 +42,9 @@
             <a class="nav-link" href="#video">Video <i class="icon ion-ios-arrow-forward icon-mobile"></i></a>
           </li>
           <li class="nav-item nav-custom-link">
-            <a class="nav-link" href="#team">Process <i class="icon ion-ios-arrow-forward icon-mobile"></i></a>
+            <a class="nav-link" href="#team">Team <i class="icon ion-ios-arrow-forward icon-mobile"></i></a>
+          <li class="nav-item nav-custom-link">
+            <a class="nav-link" href="#proces">Process <i class="icon ion-ios-arrow-forward icon-mobile"></i></a>
           </li>
         </ul>
       </div>
@@ -143,7 +145,150 @@
 
 </style>
 
-  <!-- P R I C I N G -->
+<!-- M E E T  T H E  T E A M -->
+<section id="team">
+  <div class="container">
+    <div class="title-block text-center">
+      <h2>Meet Our Team</h2>
+      <div class="title-underline"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-sm-6">
+        <div class="team-member">
+          <div class="team-img-circle">
+            <img src="images/team-1.jpg" alt="Team Member">
+          </div>
+          <div class="team-info">
+            <h5>Annika Damstedt</h5>
+            <small>'27, Computer Science</small>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="team-member">
+          <div class="team-img-circle">
+            <img src="images/team-2.jpg" alt="Team Member">
+          </div>
+          <div class="team-info">
+            <h5>Hannah Zhang</h5>
+            <small>'27, Computer Science</small>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="team-member">
+          <div class="team-img-circle">
+            <img src="images/team-3.jpg" alt="Team Member">
+          </div>
+          <div class="team-info">
+            <h5>Krystelle Baluyot</h5>
+            <small>'27, Computer Science </small>
+          </div>
+        </div>
+      </div>
+</section>
+<!-- E N D  M E E T  T H E  T E A M -->
+
+<style>
+#team {
+  padding: 80px 0;
+  background: #f5f0eb;
+}
+
+.title-block {
+  margin-bottom: 60px;
+}
+
+.title-block h2 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+  font-family: 'Georgia', serif;
+}
+
+.title-underline {
+  width: 80px;
+  height: 4px;
+  background: #0095f7;
+  margin: 0 auto;
+}
+
+.team-member {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.team-img-circle {
+  width: 220px;
+  height: 220px;
+  margin: 0 auto 25px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 6px solid #ffbf00;
+  box-shadow: 0 8px 20px rgba(90, 26, 26, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover .team-img-circle {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(90, 26, 26, 0.25);
+}
+
+.team-img-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-info {
+  padding: 0 15px;
+}
+
+.team-info h5 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #2c2c2c;
+  margin-bottom: 8px;
+  font-family: 'Georgia', serif;
+}
+
+.team-info small {
+  display: block;
+  color: #0095f7;
+;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .title-block h2 {
+    font-size: 36px;
+  }
+  
+  .team-img-circle {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .team-info h5 {
+    font-size: 22px;
+  }
+  
+  .team-info small {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .team-member {
+    margin-bottom: 50px;
+  }
+}
+</style>
+
+
+  <!-- P R O C E S S -->
   <section id="pricing">
     <div class="container">
       <div class="title-block">
@@ -213,17 +358,7 @@
   </section>
   <!-- E N D  P R I C I N G -->
 
-  <!-- C A L L  T O  A C T I O N -->
-  <section id="call-to-action">
-    <div class="container text-center">
-      <h2>Increase your conversion rates now</h2>
-      <div class="title-block">
-        <p>Learn how to increase both your online and offline conversion rates and boost your sales and profits.</p>
-        <a href="#" class="btn btn-regular">Get Started</a>
-      </div>
-    </div>
-  </section>
-  <!-- E N D  C A L L  T O  A C T I O N -->
+  
 
   <!--  F O O T E R  -->
   <footer>
