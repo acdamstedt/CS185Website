@@ -31,12 +31,12 @@
         --bg-light: #f8f9fa;
       }
 
-.nav-logo-desktop {
-  width: 150px;
-}
-
+.nav-logo-desktop,
 .nav-logo-mobile {
-  width: 150px;
+  height: 35px;
+  width: auto;
+  max-width: none;  /* overrides img-fluid's max-width: 100% */
+  display: block;
 }
        /* Hero Section */
   #hero {
@@ -572,10 +572,12 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="icon ion-md-menu"></span>
     </button>
-    <img src="images/screwit_logo.png" class="img-fluid nav-logo-mobile" alt="App Logo">
+    <!-- Mobile logo -->
+<img src="images/screwit_logo.png" class="nav-logo-mobile" alt="App Logo">
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <div class="container">
-      	<img src="images/screwit_logo.png" class="img-fluid nav-logo-desktop" alt="App Logo">
+      	<!-- Desktop logo -->
+<img src="images/screwit_logo.png" class="nav-logo-desktop" alt="App Logo">
         <ul class="navbar-nav ml-auto nav-right" data-easing="easeInOutExpo" data-speed="1250" data-offset="65">
           <li class="nav-item nav-custom-link">
             <a class="nav-link" href="index.html">Home <i class="icon ion-ios-arrow-forward icon-mobile"></i></a>
@@ -779,9 +781,9 @@
               <img src="images/process-6.jpg" alt="Process Step 6">
             </div>
             <div class="process-content">
-              <h3>GR6a: Medium-Fi Figma Prototype</h3>
+              <h3>GR6: Medium-Fi Figma Prototype</h3>
               <p>[insert description]</p>
-              <a href="#" target="_blank" class="btn-link">Coming Soon</a>
+              <a href="https://docs.google.com/presentation/d/1sKUUoJGslNNNwERevi7_5EDiwAGfNI6siFgplfUuahU/edit?usp=sharing" target="_blank" class="btn-link">Google Slides</a>
             </div>
           </div>
         </div>
@@ -803,7 +805,7 @@
               <img src="images/process-8.jpg" alt="Process Step 8">
             </div>
             <div class="process-content">
-              <h3>GR6b: Interactive Figma High-Fi Prototype</h3>
+              <h3>GR8: Interactive Figma High-Fi Prototype</h3>
               <p>[insert description]</p>
               <a href="#" target="_blank" class="btn-link">Coming Soon</a>
             </div>
@@ -815,7 +817,7 @@
               <img src="images/process-9.jpg" alt="Process Step 9">
             </div>
             <div class="process-content">
-              <h3>GR8: Poster, Pitch & Video Demo</h3>
+              <h3>GR9: Poster, Pitch & Video Demo</h3>
               <p>[insert description]</p>
               <a href="#" target="_blank" class="btn-link">Coming Soon</a>
             </div>
@@ -827,7 +829,7 @@
               <img src="images/process-10.jpg" alt="Process Step 10">
             </div>
             <div class="process-content">
-              <h3>GR9: Final Report</h3>
+              <h3>GR10: Final Report</h3>
               <p>[insert description]</p>
               <a href="#" target="_blank" class="btn-link">Coming Soon</a>
             </div>
