@@ -31,12 +31,15 @@
         --bg-light: #f8f9fa;
       }
 
+.nav-logo {
+  height: 120px;
+  width: auto;
+}
+
+/* Remove old mobile/desktop logo rules */
 .nav-logo-desktop,
 .nav-logo-mobile {
-  height: 35px;
-  width: auto;
-  max-width: none;  /* overrides img-fluid's max-width: 100% */
-  display: block;
+  display: none;
 }
        /* Hero Section */
   #hero {
@@ -81,7 +84,7 @@
   .hero-badge {
     display: inline-block;
     background: var(--accent-yellow);
-    color: var(--secondary-blue);
+    color: #FFFFFF !important;
     padding: 8px 20px;
     border-radius: 50px;
     font-size: 14px;
@@ -567,38 +570,32 @@
 
   <body>
 
-  <!-- N A V B A R -->
-  <nav class="navbar navbar-default navbar-expand-lg fixed-top custom-navbar">
+ <!-- N A V B A R -->
+<nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+  <div class="container">
+    <!-- Logo (always visible) -->
+    <a class="navbar-brand" href="index.html">
+      <img src="images/screwit_logo.png" class="nav-logo" alt="Screw It Logo">
+    </a>
+
+    <!-- Hamburger toggle -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="icon ion-md-menu"></span>
     </button>
-    <!-- Mobile logo -->
-<img src="images/screwit_logo.png" class="nav-logo-mobile" alt="App Logo">
+
+    <!-- Nav links -->
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <div class="container">
-      	<!-- Desktop logo -->
-<img src="images/screwit_logo.png" class="nav-logo-desktop" alt="App Logo">
-        <ul class="navbar-nav ml-auto nav-right" data-easing="easeInOutExpo" data-speed="1250" data-offset="65">
-          <li class="nav-item nav-custom-link">
-            <a class="nav-link" href="index.html">Home <i class="icon ion-ios-arrow-forward icon-mobile"></i></a>
-          </li>
-          <li class="nav-item nav-custom-link">
-            <a class="nav-link" href="#about">About <i class="icon ion-ios-arrow-forward icon-mobile"></i></a>
-          </li>
-          <li class="nav-item nav-custom-link">
-            <a class="nav-link" href="#video">Video <i class="icon ion-ios-arrow-forward icon-mobile"></i></a>
-          </li>
-          <li class="nav-item nav-custom-link">
-            <a class="nav-link" href="#team">Team <i class="icon ion-ios-arrow-forward icon-mobile"></i></a>
-          </li>
-          <li class="nav-item nav-custom-link">
-            <a class="nav-link" href="#process">Process <i class="icon ion-ios-arrow-forward icon-mobile"></i></a>
-          </li>
-        </ul>
-      </div>
+      <ul class="navbar-nav ml-auto" data-easing="easeInOutExpo" data-speed="1250" data-offset="65">
+        <li class="nav-item nav-custom-link"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item nav-custom-link"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item nav-custom-link"><a class="nav-link" href="#video">Video</a></li>
+        <li class="nav-item nav-custom-link"><a class="nav-link" href="#team">Team</a></li>
+        <li class="nav-item nav-custom-link"><a class="nav-link" href="#process">Process</a></li>
+      </ul>
     </div>
-  </nav>
-  <!-- E N D  N A V B A R -->
+  </div>
+</nav>
+<!-- E N D  N A V B A R -->
   
   <!-- H E R O -->
 <section id="hero">
@@ -722,7 +719,7 @@
             </div>
             <div class="process-content">
               <h3>GR1: Needfinding</h3>
-              <p>[insert description].</p>
+              <p>Our needfinding phase where we interviewed people to determine personal needs and thoughts regarding our problem domain.</p>
               <a href="https://docs.google.com/presentation/d/11ovOM6_77RqPhhFcBeXHTbKJ1WsdKJLXIr6L6ivd82A/edit?usp=sharing" target="_blank" class="btn-link">Google Slides</a>
             </div>
           </div>
@@ -734,7 +731,7 @@
             </div>
             <div class="process-content">
               <h3>GR2: POVs, HMWs, Brainstorming & Experience Prototypes</h3>
-              <p>[insert description]</p>
+              <p>From our needfinding interviews, we deduced POVs and "How Might We?" questions to look deeper into and narrow our scope. With these, we were able to determine solutions and tested specific solutions using simple protoypes.</p>
               <a href="https://docs.google.com/presentation/d/1OVFiLjZrj52lQesbTdHNOIGfgifidH0ACj2XWGDbyXY/edit?usp=sharing" target="_blank" class="btn-link">Google Slides</a>
             </div>
           </div>
@@ -758,8 +755,9 @@
             </div>
             <div class="process-content">
               <h3>GR4: Concept Video</h3>
-              <p>[insert description]</p>
+              <p>We narrowed on a specific solution and decided on the catchy name, "Screw It!". We did market research and discussed our values with this to ensure our solution is efficient and inclusive for users. Our concept video portrays our general solution and value.</p>
               <a href="https://docs.google.com/presentation/d/19r0LEkK5Gx5he-OWMw9aWDGBb8xjxQPUGAZLPq-cKJk/edit?usp=sharing" target="_blank" class="btn-link">Google Slides</a>
+              <a href="https://youtu.be/-8nDNGCRIsw?si=9T9947TtEmTebOfR" target="_blank" class="btn-link">Concept Video (Youtube)</a>
             </div>
           </div>
         </div>
@@ -770,8 +768,10 @@
             </div>
             <div class="process-content">
               <h3>GR5: Sketching, Low-Fi Prototype & User Testing</h3>
-              <p>[insert description]</p>
+              <p>Our Low-fi Prototype of Screw It, conducted on paper. We sketched out task flows onto paper based on complexity and had potential users test it to illuminate any acts concerning our inital UI design. </p>
               <a href="https://docs.google.com/presentation/d/1j6ky0bFhrWLNPtTpD5ibhNU2VlJsumhSD5P-xU-18SM/edit?usp=sharing" target="_blank" class="btn-link">Google Slides</a>
+              <a href="https://docs.google.com/document/d/1_Q1TDWQvpvXVMOhRoEtcAxVspcEgisUgyLIeDz83ZNo/edit?usp=sharing" target="_blank" class="btn-link">Sketching Report</a>
+            </div>
             </div>
           </div>
         </div>
@@ -782,7 +782,8 @@
             </div>
             <div class="process-content">
               <h3>GR6: Medium-Fi Figma Prototype</h3>
-              <p>[insert description]</p>
+              <p>Our Medium-Fi Prototype, created with Figma. We implemented our design with hard-coded elements. However, it demonstrates our three task flows with clear colorful UI and transitions. </p>
+              <a href="https://www.figma.com/proto/lMQ2zVDXd33DWxsgweU8iZ/Screw-It-Medium-Prototype?node-id=9-516&t=wYw8pU5fCcYm1N3Q-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=9%3A516" target="_blank" class="btn-link">Prototype (Figma)</a>
               <a href="https://docs.google.com/presentation/d/1sKUUoJGslNNNwERevi7_5EDiwAGfNI6siFgplfUuahU/edit?usp=sharing" target="_blank" class="btn-link">Google Slides</a>
             </div>
           </div>
@@ -794,8 +795,9 @@
             </div>
             <div class="process-content">
               <h3>GR7: Heuristic Evaluation</h3>
-              <p>[insert description]</p>
-              <a href="#" target="_blank" class="btn-link">Coming Soon</a>
+              <p>Members of different teams evaluated our Medium-Fi Prototype using Nieslen's Heuristics and ranked by severity. This allowed us to see what violations were made and needed to be changed and improved with our prototype. </p>
+              <a href="https://docs.google.com/spreadsheets/d/1PWrznWI09R6uPvRLzCU79gSGVXLk1RNa3KNekmQlaC8/edit?usp=sharing" target="_blank" class="btn-link">Sheet #1</a>
+              <a href="https://docs.google.com/spreadsheets/d/1X8JS51U18Y8sEJR6XakvV0bHMlk76h6IVvLz4o6N1wI/edit?usp=sharing" target="_blank" class="btn-link">Sheet #2</a>
             </div>
           </div>
         </div>
@@ -863,7 +865,7 @@
         </div>
         <div class="col-md-4">
           <h5>Screw It!</h5>
-          <p>[insert description]</p>
+          <p>A central hub for home maintenance help, designed at University of California, Santa Barabara. No pressure for doing home maintenance yourself.</p>
         </div>
       </div> 
       <div class="divider"></div>
