@@ -18,7 +18,7 @@
         --text-light: #FFFFFF;
         --bg-light: #f8f9fa;
       }
-      .nav-logo { height:60px; width:auto; }
+      .nav-logo { height:120px; width:auto; }
       .nav-logo-desktop, .nav-logo-mobile { display:none; }
 
       /* NAVBAR */
@@ -64,8 +64,8 @@
       #about .content-box p { font-size:16px; line-height:1.8; color:var(--text-dark); }
 
       /* VIDEO */
-      #video { background:#fff; padding:80px 0; }
-      #video .title-block h2 { color:var(--primary-blue); }
+      #video { background:var(--primary-blue); padding:80px 0; }
+      #video .title-block h2 { color:var(--text-light); }
       .video-wrapper { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; background:#000; border-radius:8px; box-shadow:0 4px 15px rgba(0,0,0,0.1); }
       .video-wrapper iframe { position:absolute; top:0; left:0; width:100%; height:100%; }
       .video-description { padding:30px; background:var(--bg-light); border-radius:8px; height:100%; box-shadow:0 4px 15px rgba(0,0,0,0.1); }
@@ -86,15 +86,15 @@
       /* PROCESS */
       #process { padding:80px 0; background:var(--bg-light); }
       #process .title-block h2 { color:var(--primary-blue); }
-      .process-card { background:#fff; border-radius:8px; overflow:hidden; box-shadow:0 4px 15px rgba(0,0,0,0.1); transition:transform .3s ease,box-shadow .3s ease; display:flex; flex-direction:row; height:250px; }
+      .process-card { background:#fff; border-radius:8px; overflow:hidden; box-shadow:0 4px 15px rgba(0,0,0,0.1); transition:transform .3s ease,box-shadow .3s ease; display:flex; flex-direction:row; height:auto; }
       .process-card:hover { transform:translateY(-5px); box-shadow:0 8px 25px rgba(0,0,0,0.15); }
-      .process-image { width:40%; flex-shrink:0; overflow:hidden; background:#e0e0e0; }
-      .process-image img { width:100%; height:100%; object-fit:cover; transition:transform .3s ease; }
+      .process-image { width:40%; flex-shrink:0; overflow:hidden; background:#e0e0e0; min-height:260px; }
+      .process-image img { width:100%; height:100%; object-fit:cover; transition:transform .3s ease; display:block; }
       .process-card:hover .process-image img { transform:scale(1.05); }
-      .process-content { padding:25px 20px; flex-grow:1; display:flex; flex-direction:column; overflow:hidden; }
-      @media(max-width:600px){.process-card{flex-direction:column;height:auto}.process-image{width:100%;height:180px}}
-      .process-content h3 { font-size:17px; font-weight:700; color:var(--teal); margin-bottom:8px; font-family:'Georgia',serif; line-height:1.3; }
-      .process-content p { font-size:13px; color:var(--text-dark); line-height:1.5; margin-bottom:10px; flex-grow:1; overflow:hidden; }
+      .process-content { padding:25px 20px; flex-grow:1; display:flex; flex-direction:column; }
+      @media(max-width:600px){.process-card{flex-direction:column}.process-image{width:100%;min-height:180px}}
+      .process-content h3 { font-size:18px; font-weight:700; color:var(--teal); margin-bottom:10px; font-family:'Georgia',serif; line-height:1.3; }
+      .process-content p { font-size:14px; color:var(--text-dark); line-height:1.6; margin-bottom:14px; flex-grow:1; }
       .btn-link { display:inline-block; background:var(--primary-blue); color:var(--text-light); padding:6px 16px; border-radius:50px; font-weight:600; text-decoration:none; font-size:12px; transition:all .3s ease; text-align:center; box-shadow:0 3px 10px rgba(11,55,95,0.2); margin-top:4px; }
       .btn-link+.btn-link { margin-top:5px; }
       .btn-link:hover { background:var(--accent-yellow); color:var(--secondary-blue); text-decoration:none; transform:translateY(-2px); box-shadow:0 5px 15px rgba(250,190,18,0.3); }
@@ -145,8 +145,8 @@
             <li class="nav-item nav-custom-link"><a class="nav-link" href="index.html">Home</a></li>
             <li class="nav-item nav-custom-link"><a class="nav-link" href="#about">About</a></li>
             <li class="nav-item nav-custom-link"><a class="nav-link" href="#video">Video</a></li>
-            <li class="nav-item nav-custom-link"><a class="nav-link" href="#process">Process</a></li>
             <li class="nav-item nav-custom-link"><a class="nav-link" href="#team">Team</a></li>
+            <li class="nav-item nav-custom-link"><a class="nav-link" href="#process">Process</a></li>
           </ul>
         </div>
       </div>
@@ -454,8 +454,7 @@
           document.querySelectorAll('.dot').forEach(function (d, i) {
             d.classList.toggle('active', i === current);
           });
-          var end = Math.min(current + getVisible(), total);
-          counter.textContent = (current + 1) + '\u2013' + end + ' of ' + total;
+          counter.textContent = (current + 1) + ' of ' + total;
           prevBtn.disabled = current === 0;
           nextBtn.disabled = current >= maxIndex();
         }
