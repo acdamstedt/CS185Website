@@ -9,6 +9,23 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
     <title>Screw It!</title>
     <style>
+      html { scroll-behavior: smooth; }
+
+      /* SCROLL FADE */
+      .fade-section { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+      .fade-section.visible { opacity: 1; transform: translateY(0); }
+
+      /* FADE IN SECTIONS */
+      section, footer {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+      }
+      section.visible, footer.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
       :root {
         --primary-blue: #0b375f;
         --secondary-blue: #032742;
@@ -18,7 +35,7 @@
         --text-light: #FFFFFF;
         --bg-light: #f8f9fa;
       }
-      .nav-logo { height:120px; width:auto; }
+      .nav-logo { height:90px; width:auto; }
       .nav-logo-desktop, .nav-logo-mobile { display:none; }
 
       /* NAVBAR */
@@ -64,8 +81,8 @@
       #about .content-box p { font-size:16px; line-height:1.8; color:var(--text-dark); }
 
       /* VIDEO */
-      #video { background:var(--primary-blue); padding:80px 0; }
-      #video .title-block h2 { color:var(--text-light); }
+      #video { background:#fff; padding:80px 0; }
+      #video .title-block h2 { color:var(--primary-blue); }
       .video-wrapper { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; background:#000; border-radius:8px; box-shadow:0 4px 15px rgba(0,0,0,0.1); }
       .video-wrapper iframe { position:absolute; top:0; left:0; width:100%; height:100%; }
       .video-description { padding:30px; background:var(--bg-light); border-radius:8px; height:100%; box-shadow:0 4px 15px rgba(0,0,0,0.1); }
@@ -170,7 +187,7 @@
     </section>
 
     <!-- A B O U T -->
-    <section id="about">
+    <section id="about" class="fade-section">
       <div class="container">
         <div class="row">
           <div class="col-md-5">
@@ -187,7 +204,7 @@
     </section>
 
     <!-- C O N C E P T  V I D E O -->
-    <section id="video">
+    <section id="video" class="fade-section">
       <div class="container">
         <div class="title-block">
           <h2>Concept Video</h2>
@@ -210,7 +227,7 @@
     </section>
 
     <!-- P R O C E S S -->
-    <section id="process">
+    <section id="process" class="fade-section">
       <div class="container">
         <div class="title-block">
           <h2>Our Design Process</h2>
@@ -357,7 +374,7 @@
     </section>
 
     <!-- M E E T  T H E  T E A M -->
-    <section id="team">
+    <section id="team" class="fade-section">
       <div class="container">
         <div class="title-block">
           <h2>Meet the Team</h2>
@@ -387,7 +404,7 @@
     </section>
 
     <!-- F O O T E R -->
-    <footer>
+    <footer class="fade-section">
       <div class="container">
         <div class="row">
           <div class="col-md-4">
@@ -424,6 +441,21 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+    <script>
+      // Fade in sections on scroll
+      var fadeObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.08 });
+
+      document.querySelectorAll('section, footer').forEach(function(el) {
+        fadeObserver.observe(el);
+      });
+    </script>
 
     <script>
       (function () {
@@ -472,6 +504,20 @@
 
         goTo(0);
       })();
+    </script>
+
+    <script>
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.fade-section').forEach(function(el) {
+        observer.observe(el);
+      });
     </script>
 
   </body>
