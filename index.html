@@ -8,143 +8,6 @@
     <link href="https://unpkg.com/ionicons@4.2.0/dist/css/ionicons.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
     <title>Screw It!</title>
-    <style>
-      html { scroll-behavior: smooth; }
-
-      /* SCROLL FADE */
-      .fade-section { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
-      .fade-section.visible { opacity: 1; transform: translateY(0); }
-
-      /* FADE IN SECTIONS */
-      section, footer {
-        opacity: 0;
-        transform: translateY(24px);
-        transition: opacity 0.7s ease, transform 0.7s ease;
-      }
-      section.visible, footer.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      :root {
-        --primary-blue: #0b375f;
-        --secondary-blue: #032742;
-        --accent-yellow: #fabe12;
-        --teal: #3b8387;
-        --text-dark: #333333;
-        --text-light: #FFFFFF;
-        --bg-light: #f8f9fa;
-      }
-      .nav-logo { height:90px; width:auto; }
-      .nav-logo-desktop, .nav-logo-mobile { display:none; }
-
-      /* NAVBAR */
-      .custom-navbar { background:#ffffff !important; box-shadow:0 2px 15px rgba(0,0,0,0.1); padding:10px 0; }
-      .custom-navbar .nav-link { color:var(--primary-blue) !important; font-weight:600; font-size:15px; padding:8px 16px !important; transition:color 0.3s ease; }
-      .custom-navbar .nav-link:hover { color:var(--accent-yellow) !important; }
-      .custom-navbar .navbar-toggler { border-color:var(--primary-blue); }
-      .custom-navbar .navbar-toggler .icon { color:var(--primary-blue); font-size:1.5rem; }
-
-      /* HERO */
-      #hero {
-        padding: 120px 0 80px;
-        background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
-        position: relative; overflow: hidden;
-      }
-      #hero::before {
-        content: ''; position: absolute; top:0;left:0;right:0;bottom:0;
-        background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-        opacity: 0.5;
-      }
-      #hero .container { position: relative; z-index: 1; }
-      #hero .row { align-items: center; }
-      #hero img { max-width:100%; height:auto; filter:drop-shadow(0 20px 40px rgba(0,0,0,0.3)); animation:float 3s ease-in-out infinite; }
-      @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
-      .hero-content { padding: 0 20px; }
-      .hero-badge { display:inline-block; background:var(--accent-yellow); color:#fff!important; padding:8px 20px; border-radius:50px; font-size:14px; font-weight:700; text-transform:uppercase; letter-spacing:1px; margin-bottom:20px; }
-      #hero h1 { font-size:56px; font-weight:700; color:var(--text-light); margin-bottom:20px; font-family:'Georgia',serif; line-height:1.2; }
-      #hero p { font-size:20px; color:rgba(255,255,255,0.9); margin-bottom:30px; line-height:1.6; }
-      .btn-hero { display:inline-block; background:var(--accent-yellow); color:var(--secondary-blue); padding:15px 40px; border-radius:50px; font-size:16px; font-weight:700; text-decoration:none; text-transform:uppercase; letter-spacing:1px; transition:all .3s ease; box-shadow:0 4px 15px rgba(250,190,18,0.3); }
-      .btn-hero:hover { background:#ffd24d; color:var(--secondary-blue); transform:translateY(-2px); box-shadow:0 6px 20px rgba(250,190,18,0.4); text-decoration:none; }
-      @media(max-width:992px){#hero{padding:100px 0 60px}#hero h1{font-size:42px}#hero p{font-size:18px}}
-      @media(max-width:768px){#hero{padding:80px 0 60px;text-align:center}#hero h1{font-size:36px;margin-top:30px}#hero p{font-size:16px}.hero-content{padding:0}#hero img{max-width:80%;margin:0 auto;display:block}}
-      @media(max-width:576px){#hero h1{font-size:32px}.btn-hero{padding:12px 30px;font-size:14px}}
-
-      /* TITLES */
-      .title-block { margin-bottom:60px; text-align:center; }
-      .title-block h2 { font-size:48px; font-weight:700; margin-bottom:20px; font-family:'Georgia',serif; }
-      .title-underline { width:80px; height:4px; background:var(--accent-yellow); margin:0 auto; }
-
-      /* ABOUT */
-      #about { background:var(--bg-light); padding:80px 0; }
-      #about .content-box h2 { font-size:48px; font-weight:700; color:var(--primary-blue); margin-bottom:20px; font-family:'Georgia',serif; }
-      #about .content-box p { font-size:16px; line-height:1.8; color:var(--text-dark); }
-
-      /* VIDEO */
-      #video { background:#fff; padding:80px 0; }
-      #video .title-block h2 { color:var(--primary-blue); }
-      .video-wrapper { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; background:#000; border-radius:8px; box-shadow:0 4px 15px rgba(0,0,0,0.1); }
-      .video-wrapper iframe { position:absolute; top:0; left:0; width:100%; height:100%; }
-      .video-description { padding:30px; background:var(--bg-light); border-radius:8px; height:100%; box-shadow:0 4px 15px rgba(0,0,0,0.1); }
-      .video-description h4 { margin-bottom:15px; font-size:24px; font-weight:700; color:var(--primary-blue); font-family:'Georgia',serif; }
-      .video-description p { font-size:15px; line-height:1.6; color:var(--text-dark); }
-
-      /* TEAM */
-      #team { padding:80px 0; background:var(--primary-blue); }
-      #team .title-block h2 { color:var(--text-light)!important; }
-      .team-member { text-align:center; margin-bottom:40px; }
-      .team-img-circle { width:220px; height:220px; margin:0 auto 25px; border-radius:50%; overflow:hidden; border:6px solid var(--accent-yellow); box-shadow:0 8px 20px rgba(250,190,18,0.3); transition:transform .3s ease,box-shadow .3s ease; }
-      .team-member:hover .team-img-circle { transform:scale(1.05); box-shadow:0 12px 30px rgba(250,190,18,0.5); }
-      .team-img-circle img { width:100%; height:100%; object-fit:cover; }
-      .team-info { padding:0 15px; }
-      .team-info h5 { font-size:26px; font-weight:700; color:var(--text-light); margin-bottom:8px; font-family:'Georgia',serif; }
-      .team-info small { display:block; color:var(--teal); font-family:'Georgia',serif; font-size:16px; font-weight:500; }
-
-      /* PROCESS */
-      #process { padding:80px 0; background:var(--bg-light); }
-      #process .title-block h2 { color:var(--primary-blue); }
-      .process-card { background:#fff; border-radius:8px; overflow:hidden; box-shadow:0 4px 15px rgba(0,0,0,0.1); transition:transform .3s ease,box-shadow .3s ease; display:flex; flex-direction:row; height:auto; }
-      .process-card:hover { transform:translateY(-5px); box-shadow:0 8px 25px rgba(0,0,0,0.15); }
-      .process-image { width:40%; flex-shrink:0; overflow:hidden; background:#e0e0e0; min-height:260px; }
-      .process-image img { width:100%; height:100%; object-fit:cover; transition:transform .3s ease; display:block; }
-      .process-card:hover .process-image img { transform:scale(1.05); }
-      .process-content { padding:25px 20px; flex-grow:1; display:flex; flex-direction:column; }
-      @media(max-width:600px){.process-card{flex-direction:column}.process-image{width:100%;min-height:180px}}
-      .process-content h3 { font-size:18px; font-weight:700; color:var(--teal); margin-bottom:10px; font-family:'Georgia',serif; line-height:1.3; }
-      .process-content p { font-size:14px; color:var(--text-dark); line-height:1.6; margin-bottom:14px; flex-grow:1; }
-      .btn-link { display:inline-block; background:var(--primary-blue); color:var(--text-light); padding:6px 16px; border-radius:50px; font-weight:600; text-decoration:none; font-size:12px; transition:all .3s ease; text-align:center; box-shadow:0 3px 10px rgba(11,55,95,0.2); margin-top:4px; }
-      .btn-link+.btn-link { margin-top:5px; }
-      .btn-link:hover { background:var(--accent-yellow); color:var(--secondary-blue); text-decoration:none; transform:translateY(-2px); box-shadow:0 5px 15px rgba(250,190,18,0.3); }
-
-      /* CAROUSEL */
-      .carousel-wrapper { display:flex; align-items:center; gap:12px; }
-      .carousel-track-container { overflow:hidden; width:100%; }
-      .carousel-track { display:flex; gap:24px; transition:transform .45s cubic-bezier(0.25,0.46,0.45,0.94); align-items:stretch; }
-      .carousel-slide { flex:0 0 100%; min-width:0; }
-      .carousel-btn { background:var(--primary-blue); color:#fff; border:none; border-radius:50%; width:46px; height:46px; font-size:1.3rem; cursor:pointer; flex-shrink:0; transition:background .3s ease,transform .2s ease; display:flex; align-items:center; justify-content:center; box-shadow:0 3px 10px rgba(0,0,0,0.15); }
-      .carousel-btn:hover { background:var(--accent-yellow); color:var(--secondary-blue); transform:scale(1.08); }
-      .carousel-btn:disabled { opacity:.35; cursor:not-allowed; transform:none; }
-      .carousel-dots { display:flex; justify-content:center; gap:8px; margin-top:28px; }
-      .dot { width:10px; height:10px; border-radius:50%; background:#ccc; cursor:pointer; transition:background .3s,transform .2s; border:none; padding:0; }
-      .dot.active { background:var(--primary-blue); transform:scale(1.3); }
-      .dot:hover:not(.active) { background:var(--teal); }
-      .carousel-counter { text-align:center; margin-top:12px; font-size:14px; color:#888; font-weight:500; }
-
-      /* FOOTER */
-      footer { background:var(--secondary-blue); color:var(--text-light); padding:60px 0 30px; }
-      footer h5 { font-size:20px; font-weight:700; color:var(--text-light); margin-bottom:20px; font-family:'Georgia',serif; }
-      footer ul { list-style:none; padding:0; margin:0; }
-      footer ul li { margin-bottom:12px; color:var(--text-light); font-size:15px; line-height:1.6; }
-      footer ul li a { color:var(--text-light); text-decoration:none; transition:color .3s ease; }
-      footer ul li a:hover { color:var(--accent-yellow); text-decoration:none; }
-      footer p { color:var(--text-light); font-size:15px; line-height:1.6; margin:0; }
-      footer .divider { height:1px; background:rgba(255,255,255,0.2); margin:40px 0 30px; }
-      footer small { color:rgba(255,255,255,0.7); font-size:14px; }
-
-      /* RESPONSIVE */
-      @media(max-width:768px){.title-block h2{font-size:36px}#about .content-box h2{font-size:36px}.team-img-circle{width:180px;height:180px}.team-info h5{font-size:22px}.team-info small{font-size:14px}footer{padding:40px 0 20px}footer .col-md-4{margin-bottom:30px}footer .divider{margin:30px 0 20px}}
-      @media(max-width:576px){.team-member{margin-bottom:50px}}
-    </style>
   </head>
   <body>
 
@@ -168,6 +31,12 @@
         </div>
       </div>
     </nav>
+
+    <!-- S P L A S H -->
+    <div id="splash">
+      <h1>Screw It!</h1>
+      <p>Your home, your choice—DIY with confidence</p>
+    </div>
 
     <!-- H E R O -->
     <section id="hero">
@@ -518,6 +387,18 @@
       document.querySelectorAll('.fade-section').forEach(function(el) {
         observer.observe(el);
       });
+    </script>
+
+    <script>
+      // Dismiss splash when user scrolls
+      window.addEventListener('scroll', function() {
+        document.getElementById('splash').classList.add('hidden');
+      }, { once: true });
+
+      // Also dismiss after 3 seconds if no scroll
+      setTimeout(function() {
+        document.getElementById('splash').classList.add('hidden');
+      }, 3000);
     </script>
 
   </body>
