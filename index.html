@@ -78,16 +78,10 @@
           <h2>Concept Video</h2>
           <div class="title-underline"></div>
         </div>
-        <div class="row">
-          <div class="col-md-8">
+        <div class="row justify-content-center">
+          <div class="col-md-10">
             <div class="video-wrapper">
               <iframe width="100%" height="450" src="https://www.youtube.com/embed/-8nDNGCRIsw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="video-description">
-              <h4>About This Video</h4>
-              <p>[insert description]</p>
             </div>
           </div>
         </div>
@@ -96,16 +90,10 @@
           <h2>Demo Video</h2>
           <div class="title-underline"></div>
         </div>
-        <div class="row">
-          <div class="col-md-8">
+        <div class="row justify-content-center">
+          <div class="col-md-10">
             <div class="video-wrapper">
               <iframe width="100%" height="450" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="video-description">
-              <h4>About This Video</h4>
-              <p>[insert description]</p>
             </div>
           </div>
         </div>
@@ -412,6 +400,20 @@
     document.getElementById('splash').classList.add('hidden');
     sessionStorage.setItem('splashShown', 'true');
   }, 3000);
+</script>
+
+<script>
+  var teamObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll('.team-member').forEach(function(el) {
+    teamObserver.observe(el);
+  });
 </script>
 
   </body>
