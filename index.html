@@ -25,8 +25,8 @@
             <li class="nav-item nav-custom-link"><a class="nav-link" href="index.html">Home</a></li>
             <li class="nav-item nav-custom-link"><a class="nav-link" href="#about">About</a></li>
             <li class="nav-item nav-custom-link"><a class="nav-link" href="#video">Video</a></li>
-            <li class="nav-item nav-custom-link"><a class="nav-link" href="#team">Team</a></li>
             <li class="nav-item nav-custom-link"><a class="nav-link" href="#process">Process</a></li>
+            <li class="nav-item nav-custom-link"><a class="nav-link" href="#team">Team</a></li>
           </ul>
         </div>
       </div>
@@ -72,7 +72,7 @@
       </div>
     </section>
 
-    <!-- C O N C E P T  V I D E O -->
+    <!-- C O N C E P T  &  D E M O  V I D E O S -->
     <section id="video" class="fade-section">
       <div class="container">
         <div class="title-block">
@@ -83,6 +83,24 @@
           <div class="col-md-8">
             <div class="video-wrapper">
               <iframe width="100%" height="450" src="https://www.youtube.com/embed/-8nDNGCRIsw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="video-description">
+              <h4>About This Video</h4>
+              <p>[insert description]</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="title-block" style="margin-top: 60px;">
+          <h2>Demo Video</h2>
+          <div class="title-underline"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-8">
+            <div class="video-wrapper">
+              <iframe width="100%" height="450" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
           </div>
           <div class="col-md-4">
@@ -276,16 +294,7 @@
     <footer class="fade-section">
       <div class="container">
         <div class="row">
-          <div class="col-md-4">
-            <h5>Explore</h5>
-            <ul>
-              <li><a href="#about">About</a></li>
-              <li><a href="#video">Concept Video</a></li>
-              <li><a href="#process">Design Process</a></li>
-              <li><a href="#team">Our Team</a></li>
-            </ul>
-          </div>
-          <div class="col-md-4">
+          <div class="col-md-6">
             <h5>Academic Context</h5>
             <ul>
               <li>University of California, Santa Barbara</li>
@@ -293,7 +302,7 @@
               <li>Winter 2026</li>
             </ul>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-6">
             <h5>Screw It!</h5>
             <p>A central hub for home maintenance help, designed at University of California, Santa Barbara. Your home, your choice—DIY with confidence.</p>
           </div>
@@ -390,16 +399,21 @@
     </script>
 
     <script>
-      // Dismiss splash when user scrolls
-      window.addEventListener('scroll', function() {
-        document.getElementById('splash').classList.add('hidden');
-      }, { once: true });
+  // Only show splash on first visit per session
+  if (sessionStorage.getItem('splashShown')) {
+    document.getElementById('splash').classList.add('hidden');
+  }
 
-      // Also dismiss after 3 seconds if no scroll
-      setTimeout(function() {
-        document.getElementById('splash').classList.add('hidden');
-      }, 3000);
-    </script>
+  window.addEventListener('scroll', function() {
+    document.getElementById('splash').classList.add('hidden');
+    sessionStorage.setItem('splashShown', 'true');
+  }, { once: true });
+
+  setTimeout(function() {
+    document.getElementById('splash').classList.add('hidden');
+    sessionStorage.setItem('splashShown', 'true');
+  }, 3000);
+</script>
 
   </body>
 </html>
