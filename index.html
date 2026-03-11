@@ -23,7 +23,7 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav ml-auto" data-easing="easeInOutExpo" data-speed="1250" data-offset="65">
             <li class="nav-item nav-custom-link"><a class="nav-link" href="#about">About</a></li>
-            <li class="nav-item nav-custom-link"><a class="nav-link" href="#video">Video</a></li>
+            <li class="nav-item nav-custom-link"><a class="nav-link" href="#video">Videos</a></li>
             <li class="nav-item nav-custom-link"><a class="nav-link" href="#process">Process</a></li>
             <li class="nav-item nav-custom-link"><a class="nav-link" href="#team">Team</a></li>
           </ul>
@@ -74,26 +74,23 @@
     <!-- C O N C E P T  &  D E M O  V I D E O S -->
     <section id="video" class="fade-section">
       <div class="container">
-        <div class="title-block">
-          <h2>Concept Video</h2>
-          <div class="title-underline"></div>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-md-10">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="title-block">
+              <h2>Concept Video</h2>
+              <div class="title-underline"></div>
+            </div>
             <div class="video-wrapper">
-              <iframe width="100%" height="450" src="https://www.youtube.com/embed/-8nDNGCRIsw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/-8nDNGCRIsw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
           </div>
-        </div>
-
-        <div class="title-block" style="margin-top: 60px;">
-          <h2>Demo Video</h2>
-          <div class="title-underline"></div>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-md-10">
+          <div class="col-md-6">
+            <div class="title-block">
+              <h2>Demo Video</h2>
+              <div class="title-underline"></div>
+            </div>
             <div class="video-wrapper">
-              <iframe width="100%" height="450" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
           </div>
         </div>
@@ -308,112 +305,90 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 
     <script>
-      // Fade in sections on scroll
-      var fadeObserver = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      }, { threshold: 0.08 });
+  // Fade in sections on scroll
+  var fadeObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.08 });
 
-      document.querySelectorAll('section, footer').forEach(function(el) {
-        fadeObserver.observe(el);
-      });
-    </script>
-
-    <script>
-      (function () {
-        var track = document.querySelector('.carousel-track');
-        var slides = Array.from(document.querySelectorAll('.carousel-slide'));
-        var dotsContainer = document.querySelector('.carousel-dots');
-        var counter = document.querySelector('.carousel-counter');
-        var prevBtn = document.querySelector('.carousel-btn.prev');
-        var nextBtn = document.querySelector('.carousel-btn.next');
-        var total = slides.length;
-        var current = 0;
-
-        function getVisible() {
-          return 1;
-        }
-
-        function maxIndex() { return total - getVisible(); }
-
-        slides.forEach(function (_, i) {
-          var dot = document.createElement('button');
-          dot.className = 'dot' + (i === 0 ? ' active' : '');
-          dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
-          dot.addEventListener('click', function () { goTo(i); });
-          dotsContainer.appendChild(dot);
-        });
-
-        function updateUI() {
-          document.querySelectorAll('.dot').forEach(function (d, i) {
-            d.classList.toggle('active', i === current);
-          });
-          counter.textContent = (current + 1) + ' of ' + total;
-          prevBtn.disabled = current === 0;
-          nextBtn.disabled = current >= maxIndex();
-        }
-
-        function goTo(index) {
-          current = Math.max(0, Math.min(index, maxIndex()));
-          var slideWidth = slides[0].offsetWidth + 24;
-          track.style.transform = 'translateX(-' + (current * slideWidth) + 'px)';
-          updateUI();
-        }
-
-        prevBtn.addEventListener('click', function () { goTo(current - 1); });
-        nextBtn.addEventListener('click', function () { goTo(current + 1); });
-        window.addEventListener('resize', function () { goTo(current); });
-
-        goTo(0);
-      })();
-    </script>
-
-    <script>
-      var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      }, { threshold: 0.1 });
-
-      document.querySelectorAll('.fade-section').forEach(function(el) {
-        observer.observe(el);
-      });
-    </script>
-
-    <script>
-  // Only show splash on first visit per session
-  if (sessionStorage.getItem('splashShown')) {
-    document.getElementById('splash').classList.add('hidden');
-  }
-
-  window.addEventListener('scroll', function() {
-    document.getElementById('splash').classList.add('hidden');
-    sessionStorage.setItem('splashShown', 'true');
-  }, { once: true });
-
-  setTimeout(function() {
-    document.getElementById('splash').classList.add('hidden');
-    sessionStorage.setItem('splashShown', 'true');
-  }, 3000);
+  document.querySelectorAll('section, footer, .fade-section').forEach(function(el) {
+    fadeObserver.observe(el);
+  });
 </script>
 
 <script>
+  // Carousel
+  (function () {
+    var track = document.querySelector('.carousel-track');
+    var slides = Array.from(document.querySelectorAll('.carousel-slide'));
+    var dotsContainer = document.querySelector('.carousel-dots');
+    var counter = document.querySelector('.carousel-counter');
+    var prevBtn = document.querySelector('.carousel-btn.prev');
+    var nextBtn = document.querySelector('.carousel-btn.next');
+    var total = slides.length;
+    var current = 0;
+
+    function maxIndex() { return total - 1; }
+
+    slides.forEach(function (_, i) {
+      var dot = document.createElement('button');
+      dot.className = 'dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+      dot.addEventListener('click', function () { goTo(i); });
+      dotsContainer.appendChild(dot);
+    });
+
+    function updateUI() {
+      document.querySelectorAll('.dot').forEach(function (d, i) {
+        d.classList.toggle('active', i === current);
+      });
+      counter.textContent = (current + 1) + ' of ' + total;
+      prevBtn.disabled = current === 0;
+      nextBtn.disabled = current >= maxIndex();
+    }
+
+    function goTo(index) {
+      current = Math.max(0, Math.min(index, maxIndex()));
+      var slideWidth = slides[0].offsetWidth + 24;
+      track.style.transform = 'translateX(-' + (current * slideWidth) + 'px)';
+      updateUI();
+    }
+
+    prevBtn.addEventListener('click', function () { goTo(current - 1); });
+    nextBtn.addEventListener('click', function () { goTo(current + 1); });
+    window.addEventListener('resize', function () { goTo(current); });
+
+    goTo(0);
+  })();
+</script>
+
+<script>
+  // Team slide up
   var teamObserver = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
       }
     });
-  }, { threshold: 0.2 });
+  }, { threshold: 0.4 });
 
   document.querySelectorAll('.team-member').forEach(function(el) {
     teamObserver.observe(el);
   });
+</script>
+
+<script>
+  // Splash
+  window.addEventListener('scroll', function() {
+    document.getElementById('splash').classList.add('hidden');
+  }, { once: true });
+
+  setTimeout(function() {
+    document.getElementById('splash').classList.add('hidden');
+  }, 3000);
 </script>
 
   </body>
