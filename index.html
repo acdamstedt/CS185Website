@@ -400,6 +400,15 @@
     document.getElementById('splash').classList.add('hidden');
   }, 3000);
 </script>
-
+<script>
+    function updateScrollMargins() {
+    var navHeight = document.querySelector('.custom-navbar').offsetHeight;
+    document.querySelectorAll('section').forEach(function(s) {
+      s.style.scrollMarginTop = '50px';
+    });
+  }
+  window.addEventListener('load', updateScrollMargins);
+  window.addEventListener('resize', updateScrollMargins);
+  </script>
   </body>
 </html>
