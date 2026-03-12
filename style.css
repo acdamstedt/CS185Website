@@ -40,7 +40,7 @@ section, footer {scroll-margin-top: 70px;}
 	.nav-logo-desktop, .nav-logo-mobile { display:none; }
 
 	/* NAVBAR */
-	.custom-navbar { background:#ffffff !important; box-shadow:0 2px 15px rgba(0,0,0,0.1); padding:8px 0; position:relative; }
+	.custom-navbar { background:#ffffff !important; box-shadow:0 2px 15px rgba(0,0,0,0.1); padding:4px 0; }
 	.custom-navbar .nav-link { color:var(--primary-blue) !important; font-weight:600; font-size:15px; padding:8px 16px !important; transition:color 0.3s ease; }
 	.custom-navbar .nav-link:hover { color:var(--accent-yellow) !important; }
 	.custom-navbar .navbar-toggler { border-color:var(--primary-blue); }
